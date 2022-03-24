@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 
 export default function App() {
-  const [currNum, setcurrNum] = useState(0);
-  const [nextNum, setNextNum] = useState(0);
+  const [currNum, setcurrNum] = useState("");
+  const [nextNum, setNextNum] = useState("");
   const [symbol, setSymbol] = useState("");
   // const [calculate, setCalculate] = useState("");
 
+  function handleClear(){
+    setcurrNum("")
+    setNextNum("")
+    setSymbol("")
+  }
+
   function handleOneChange(event) {
     if (symbol === "+" || symbol === "-" || symbol === "*" || symbol === "/") {
-      setNextNum(event.target.value);
+      setNextNum(previousState => {return previousState + (event.target.value)});
     } else {
       if (event.target.id === "number") {
+        
         var numberVal = event.target.value;
-        setcurrNum(numberVal);
+        setcurrNum(previousState => {return previousState + numberVal}
+          )
+          
       } else if (event.target.id === "math") {
         setSymbol(event.target.value);
       }
@@ -40,7 +49,7 @@ export default function App() {
         break;
     }
 
-    setNextNum(0);
+    setNextNum("");
     setSymbol("");
   }
 
@@ -49,11 +58,12 @@ export default function App() {
     <h1>Simple Calculator</h1>
       <h2>
         {currNum}
-        <br />
+        
         {symbol}
-        <br />
+       
         {nextNum}
       </h2>
+      <br/>
       <button
         className="btn btn-info"
         id="number"
@@ -154,7 +164,16 @@ export default function App() {
       </button>
       <br />
       <div className="bot-row">
+
       <div className="zero-equals">
+       <button
+        className="clear"
+        id="number"
+        value="clear"
+        onClick={handleClear}
+      >
+        clear
+      </button>
           <button
         className="btn btn-info"
         id="number"
