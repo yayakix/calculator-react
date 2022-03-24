@@ -1,0 +1,39 @@
+button {
+    padding: 10px 10px;
+    margin: 5px;
+    background-color: #F68989;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 40px;
+
+    
+}
+h2{
+    font-size: 30px;
+}
+body{
+    margin: auto;
+    background-color: #F6E7D8;
+
+}
+
+.App{
+    text-align: center;
+    margin-top: 10%;
+}
+h1 {
+    font-family: 'Knewave',
+    cursive;
+    font-size: 40px;
+}
+
+.bot-row{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    
+}
+
+.zero-equals{
+    
+}
