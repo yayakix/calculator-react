@@ -4,8 +4,6 @@ export default function App() {
   const [currNum, setcurrNum] = useState("");
   const [nextNum, setNextNum] = useState("");
   const [symbol, setSymbol] = useState("");
-  // const [special, setSpecial] = useState("");
-  // const [calculate, setCalculate] = useState("");
 
   function handleClear() {
     setcurrNum("");
@@ -14,11 +12,13 @@ export default function App() {
   }
 
   function handleOneChange(event) {
+    // if symbol has been updated, change the next number
     if (symbol === "+" || symbol === "-" || symbol === "*" || symbol === "/") {
       setNextNum((previousState) => {
         return previousState + event.target.value;
       });
     } else {
+      // else, only change the first number
       if (event.target.id === "number") {
         var numberVal = event.target.value;
         setcurrNum((previousState) => {
@@ -27,13 +27,9 @@ export default function App() {
       } else if (event.target.id === "math") {
         setSymbol(event.target.value);
       } 
-      // else if (event.target.id === "percent") {
-      //    setcurrNum((previousState) => {
-      //      return Number(previousState) * .001;
-      //    });
-      // }
     }
   }
+  // turn number into percent form
   function handlePercent(){
     // if there is not a next num only change curr num
     if(!nextNum){
@@ -46,7 +42,7 @@ setNextNum(nextnum);
     }
 
   }
-
+// make numbers negative or positive
     function handleNegPos() {
       // if there is not a next num only change curr num
       if (!nextNum) {
@@ -58,7 +54,7 @@ setNextNum(nextnum);
         setNextNum(nextnum);
       }
     }
-
+// calculate numbers when equals is pressed
   function calculateNum(event) {
     switch (symbol) {
       case "+":
@@ -79,7 +75,7 @@ setNextNum(nextnum);
       default:
         break;
     }
-
+// reset nextnum and symbol
     setNextNum("");
     setSymbol("");
   }
