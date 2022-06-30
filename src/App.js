@@ -55,159 +55,175 @@ export default function App() {
 
   return (
     <div className="App">
-    <h1>Simple Calculator</h1>
+      <h1>Simple Calculator</h1>
       <h2>
         {currNum}
-        
+
         {symbol}
-       
+
         {nextNum}
       </h2>
-      <br/>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="1"
-        onClick={handleOneChange}
-      >
-        1
-      </button>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="2"
-        onClick={handleOneChange}
-      >
-        2
-      </button>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="3"
-        onClick={handleOneChange}
-      >
-        3
-      </button>
-      <button
-        className="btn btn-info"
-        id="math"
-        value="+"
-        onClick={handleOneChange}
-      >
-        +
-      </button>
-      <br />
-      <button
-        className="btn btn-info"
-        id="number"
-        value="4"
-        onClick={handleOneChange}
-      >
-        4
-      </button>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="5"
-        onClick={handleOneChange}
-      >
-        5
-      </button>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="6"
-        onClick={handleOneChange}
-      >
-        6
-      </button>
-      <button
-        className="btn btn-info"
-        id="math"
-        value="-"
-        onClick={handleOneChange}
-      >
-        -
-      </button>
-      <br />
-      <button
-        className="btn btn-info"
-        id="number"
-        value="7"
-        onClick={handleOneChange}
-      >
-        7
-      </button>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="8"
-        onClick={handleOneChange}
-      >
-        8
-      </button>
-      <button
-        className="btn btn-info"
-        id="number"
-        value="9"
-        onClick={handleOneChange}
-      >
-        9
-      </button>
-      <button
-        className="btn btn-info"
-        id="math"
-        value="*"
-        onClick={handleOneChange}
-      >
-        *
-      </button>
-      <br />
-      <div className="bot-row">
 
-      <div className="zero-equals">
-       <button
-        className="clear"
-        id="number"
-        value="clear"
-        onClick={handleClear}
-      >
-        clear
-      </button>
+      <div className="buttonsdiv ">
+        <button
+          className="clear extra"
+          id="number"
+          value="clear"
+          onClick={handleClear}
+        >
+          C
+        </button>
+        <button
+          className="clear extra"
+          id="number"
+          value="-"
+          onClick={handleOneChange}
+        >
+          -/+
+        </button>
+        <button
+          className="clear extra"
+          id="number"
+          value="%"
+          onClick={handleOneChange}
+        >
+          %
+        </button>
+
+        <button
+          className="btn btn-info divide calc"
+          id="math"
+          value="/"
+          onClick={handleOneChange}
+        >
+          /
+        </button>
+
+        <button
+          className="btn btn-info"
+          id="number"
+          value="7"
+          onClick={handleOneChange}
+        >
+          7
+        </button>
+        <button
+          className="btn btn-info"
+          id="number"
+          value="8"
+          onClick={handleOneChange}
+        >
+          8
+        </button>
+        <button
+          className="btn btn-info"
+          id="number"
+          value="9"
+          onClick={handleOneChange}
+        >
+          9
+        </button>
+        <button
+          className="btn btn-info calc"
+          id="math"
+          value="*"
+          onClick={handleOneChange}
+        >
+          *
+        </button>
+
+        <button
+          className="btn btn-info"
+          id="number"
+          value="4"
+          onClick={handleOneChange}
+        >
+          4
+        </button>
+        <button
+          className="btn btn-info"
+          id="number"
+          value="5"
+          onClick={handleOneChange}
+        >
+          5
+        </button>
+        <button
+          className="btn btn-info"
+          id="number"
+          value="6"
+          onClick={handleOneChange}
+        >
+          6
+        </button>
+        <button
+          className="btn btn-info calc"
+          id="math"
+          value="-"
+          onClick={handleOneChange}
+        >
+          -
+        </button>
+
+        <button
+          className="btn btn-info"
+          id="number"
+          value="1"
+          onClick={handleOneChange}
+        >
+          1
+        </button>
+        <button
+          className="btn btn-info"
+          id="number"
+          value="2"
+          onClick={handleOneChange}
+        >
+          2
+        </button>
+        <button
+          className="btn btn-info"
+          id="number"
+          value="3"
+          onClick={handleOneChange}
+        >
+          3
+        </button>
+        <button
+          className="btn btn-info calc"
+          id="math"
+          value="+"
+          onClick={handleOneChange}
+        >
+          +
+        </button>
+        <div className="lastrow">
           <button
-        className="btn btn-info"
-        id="number"
-        value="0"
-        onClick={handleOneChange}
-      >
-        0
-      </button>
-      
-
-      <button
-        className="btn btn-info"
-        id="equals"
-        value="="
-        onClick={calculateNum}
-      >
-        =
-      </button>
-
+            className="btn btn-info zero"
+            id="number"
+            value="0"
+            onClick={handleOneChange}
+          >
+            0
+          </button>
+          <button
+            className="btn btn-info decimal"
+            id="number"
+            value="."
+            onClick={handleOneChange}
+          >
+            .
+          </button>
+          <button
+            className="btn btn-info calc"
+            id="equals"
+            value="="
+            onClick={calculateNum}
+          >
+            =
+          </button>
+        </div>
       </div>
-
-     
-      <button
-        className="btn btn-info divide"
-        id="math"
-        value="/"
-        onClick={handleOneChange}
-      >
-        /
-      </button>
-
-      </div>
-
-   
     </div>
   );
 }

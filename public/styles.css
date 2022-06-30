@@ -1,12 +1,15 @@
+*{
+     box-sizing: border-box;
+    margin: 0 auto;
+    color: white;
+}
 button {
     padding: 10px 10px;
-    margin: 5px;
-    background-color: #CDDEFF;
-    border-radius: 20px;
+    /* margin: 5px; */
+    background-color: #7F8487;
+    border-radius: 50%;
     font-size: 20px;
-    width: 60px;
-    
-
+    width: 50px;
     
 }
 h2{
@@ -18,15 +21,12 @@ h2{
     width: 300px;
     height: 70px;
     margin: auto;
-    border: 3px solid #676FA3;
     border-radius: 20px;
 
 }
 body{
-    margin: auto;
-    background-color: #EEF2FF;
-    
-
+   
+    background-color: #7F8487;
 }
 
 .App{
@@ -36,17 +36,36 @@ body{
 h1 {
     font-family: 'Knewave',
     cursive;
-    font-size: 40px;
-    
+    font-size: 40px;  
 }
 
-.bot-row{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-    
+
+.calc{
+background-color: #F4A442;
 }
 
-.zero-equals{
-    
+.buttonsdiv{
+    display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 8px;
+width: 300px;}
+
+.zero{
+    width: 120px;
+    text-align: left;
+    margin-right: 20px;
+    border-radius: 22px;
+}
+.lastrow{
+   grid-area: 5 / 1 / 6 / 5;
+}
+.decimal{
+    margin-right: 26px;
+    margin-left: 12px;
+}
+.extra{
+    color: black;
+    background-color: #DDDDDD;
 }
