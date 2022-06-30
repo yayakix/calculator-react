@@ -4,30 +4,49 @@ export default function App() {
   const [currNum, setcurrNum] = useState("");
   const [nextNum, setNextNum] = useState("");
   const [symbol, setSymbol] = useState("");
+  // const [special, setSpecial] = useState("");
   // const [calculate, setCalculate] = useState("");
 
-  function handleClear(){
-    setcurrNum("")
-    setNextNum("")
-    setSymbol("")
+  function handleClear() {
+    setcurrNum("");
+    setNextNum("");
+    setSymbol("");
   }
 
   function handleOneChange(event) {
     if (symbol === "+" || symbol === "-" || symbol === "*" || symbol === "/") {
-      setNextNum(previousState => {return previousState + (event.target.value)});
+      setNextNum((previousState) => {
+        return previousState + event.target.value;
+      });
     } else {
       if (event.target.id === "number") {
-        
         var numberVal = event.target.value;
-        setcurrNum(previousState => {return previousState + numberVal}
-          )
-          
+        setcurrNum((previousState) => {
+          return previousState + numberVal;
+        });
       } else if (event.target.id === "math") {
         setSymbol(event.target.value);
-      }
+      } 
+      // else if (event.target.id === "percent") {
+      //    setcurrNum((previousState) => {
+      //      return Number(previousState) * .001;
+      //    });
+      // }
     }
   }
+  function handlePercent(){
+    // if there is not a next num only change curr num
+    if(!nextNum){
+ let num = currNum / 100;
+ setcurrNum(num);
+    }
+    if(symbol){
+let nextnum = nextNum / 100;
+setNextNum(nextnum);
+    }
 
+  }
+  
   function calculateNum(event) {
     switch (symbol) {
       case "+":
@@ -74,6 +93,8 @@ export default function App() {
           >
             C
           </button>
+
+          {/* plus minus */}
           <button
             className="clear extra"
             id="number"
@@ -82,11 +103,12 @@ export default function App() {
           >
             -/+
           </button>
+          {/* percent sign */}
           <button
             className="clear extra"
-            id="number"
+            id="percent"
             value="%"
-            onClick={handleOneChange}
+            onClick={handlePercent}
           >
             %
           </button>
