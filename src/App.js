@@ -46,7 +46,19 @@ setNextNum(nextnum);
     }
 
   }
-  
+
+    function handleNegPos() {
+      // if there is not a next num only change curr num
+      if (!nextNum) {
+        let num = currNum *-1 ;
+        setcurrNum(num);
+      }
+      if (symbol) {
+        let nextnum = nextNum *-1;
+        setNextNum(nextnum);
+      }
+    }
+
   function calculateNum(event) {
     switch (symbol) {
       case "+":
@@ -96,10 +108,10 @@ setNextNum(nextnum);
 
           {/* plus minus */}
           <button
-            className="clear extra"
-            id="number"
-            value="-"
-            onClick={handleOneChange}
+            className=" extra"
+            id="special"
+            value=""
+            onClick={handleNegPos}
           >
             -/+
           </button>
