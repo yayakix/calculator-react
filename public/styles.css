@@ -6,7 +6,7 @@
 button {
     padding: 10px 10px;
     background-color: #7F8487;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     font-size: 20px;
     width: 50px;
     
@@ -34,8 +34,7 @@ body{
     margin-top: 10%;
 }
 h1 {
-    font-family: 'Knewave',
-    cursive;
+    font-family: 'Knewave',sans-serif;
     font-size: 40px;  
 }
 
@@ -50,13 +49,13 @@ grid-template-columns: repeat(4, 1fr);
 grid-template-rows: repeat(5, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 8px;
-width: 300px;}
+}
 
 .zero{
-    width: 120px;
+    width: 126px;
     text-align: left;
-    margin-right: 20px;
-    border-radius: 22px;
+    margin-right: 13px;
+    /* border-radius: 22px; */
 }
 .lastrow{
    grid-area: 5 / 1 / 6 / 5;
