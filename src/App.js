@@ -104,12 +104,12 @@ setNextNum(nextnum);
 
           {/* plus minus */}
           <button
-            className=" extra"
+            className=" extra negpos"
             id="special"
             value=""
             onClick={handleNegPos}
           >
-            -/+
+            +/-
           </button>
           {/* percent sign */}
           <button
